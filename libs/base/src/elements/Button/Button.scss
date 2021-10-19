@@ -1,3 +1,116 @@
-.Spinner {
-  display: block;
+@import '../../styles/globals';
+$default-radius: 5px;
+.Button {
+  border: none;
+  outline: none;
+  border-radius: $default-radius;
+  cursor: pointer;
+  transition: all 0.1s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &.loading {
+    cursor: not-allowed;
+  }
+  &.disabled {
+  }
+  &.fullWidth {
+    min-width: 100%;
+  }
+
+  &.size-small {
+    width: 100px;
+  }
+
+  &.size-medium {
+    width: 200px;
+    height: 30px;
+  }
+
+  &.size-large {
+    width: 300px;
+    height: 50px;
+  }
+}
+
+.contained {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  &.primary {
+    background: $primary;
+    color: $primary-text;
+    &:hover {
+      background: rgba($primary, 0.5);
+    }
+  }
+
+  &.secondary {
+    background: $secondary;
+    color: $secondary-text;
+    &:hover {
+      background: rgba($secondary, 0.5);
+    }
+  }
+
+  &.error {
+    background: $danger;
+    color: $danger-text;
+    &:hover {
+      background: rgba($danger, 0.5);
+    }
+  }
+}
+
+.text {
+  background: none;
+
+  &.primary {
+    color: $primary;
+    &:hover {
+      text-decoration: underline;
+      color: rgba($primary, 0.5);
+    }
+  }
+  &.secondary {
+    color: $secondary;
+    &:hover {
+      text-decoration: underline;
+      color: rgba($secondary, 0.5);
+    }
+  }
+  &.error {
+    color: $danger;
+    &:hover {
+      text-decoration: underline;
+      color: rgba($danger, 0.5);
+    }
+  }
+}
+
+.outlined {
+  background: none;
+  &.primary {
+    border: 1px solid $primary;
+    color: $primary;
+    &:hover {
+      border: 1px solid rgba($primary, 0.5);
+      color: rgba($primary, 0.5);
+    }
+  }
+  &.secondary {
+    border: 1px solid $secondary;
+    color: $secondary;
+    &:hover {
+      border: 1px solid rgba($secondary, 0.5);
+      color: rgba($secondary, 0.5);
+    }
+  }
+  &.error {
+    border: 1px solid $danger;
+    color: $danger;
+    &:hover {
+      border: 1px solid rgba($danger, 0.5);
+      color: rgba($danger, 0.5);
+    }
+  }
 }

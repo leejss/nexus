@@ -49,7 +49,7 @@ export const Button = ({
       <Spinner width={50} height={20} />
     </button>
   ) : (
-    <button className={classnames} onClick={handleClick}>
+    <button className={classnames} onClick={handleClick} disabled={disabled}>
       {children}
     </button>
   );

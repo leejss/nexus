@@ -4,7 +4,7 @@ import type { SpinnerProps } from './Spinner';
 import { ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Element/Spinner',
+  title: 'Base/Spinner',
   component: Spinner,
 } as ComponentMeta<typeof Spinner>;
 
