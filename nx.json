@@ -18,7 +18,8 @@
           "build",
           "lint",
           "test",
-          "e2e"
+          "e2e",
+          "build-storybook"
         ]
       }
     }
@@ -31,5 +32,20 @@
       }
     ]
   },
-  "projects": {}
+  "projects": {
+    "base": {
+      "tags": []
+    },
+    "base-e2e": {
+      "tags": [],
+      "implicitDependencies": ["base"]
+    },
+    "my-town-security": {
+      "tags": []
+    },
+    "my-town-security-e2e": {
+      "tags": [],
+      "implicitDependencies": ["my-town-security"]
+    }
+  }
 }
