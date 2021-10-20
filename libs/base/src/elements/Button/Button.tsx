@@ -24,7 +24,7 @@ export const Button = ({
   fullWidth,
   loading,
   onClick,
-  size = 'medium',
+  size,
   variant = 'contained',
 }: ButtonProps) => {
   const classnames = classNames(

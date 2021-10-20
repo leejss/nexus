@@ -9,28 +9,29 @@ $default-radius: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  padding: 5px 8px;
 
   &.loading {
     cursor: not-allowed;
   }
   &.disabled {
+    opacity: 0.5;
   }
   &.fullWidth {
     min-width: 100%;
   }
-
   &.size-small {
     width: 100px;
   }
 
   &.size-medium {
-    width: 200px;
+    width: 150px;
     height: 30px;
   }
-
   &.size-large {
-    width: 300px;
-    height: 50px;
+    width: 200px;
+    height: 40px;
   }
 }
 
@@ -39,6 +40,9 @@ $default-radius: 5px;
   &.primary {
     background: $primary;
     color: $primary-text;
+    &.loading {
+      background: rgba($primary, 0.5);
+    }
     &:hover {
       background: rgba($primary, 0.5);
     }
@@ -50,6 +54,9 @@ $default-radius: 5px;
     &:hover {
       background: rgba($secondary, 0.5);
     }
+    &.loading {
+      background: rgba($secondary, 0.5);
+    }
   }
 
   &.error {
@@ -58,11 +65,17 @@ $default-radius: 5px;
     &:hover {
       background: rgba($danger, 0.5);
     }
+    &.loading {
+      background: rgba($danger, 0.5);
+    }
   }
 }
 
 .text {
   background: none;
+  &:hover {
+    background: rgba(0, 0, 0, 0.02);
+  }
 
   &.primary {
     color: $primary;

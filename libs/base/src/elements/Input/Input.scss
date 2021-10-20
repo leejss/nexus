@@ -1,0 +1,28 @@
+@import '../../styles/globals';
+
+.InputWrapper {
+  > span {
+    display: block;
+  }
+}
+
+.Input {
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.error {
+    border: 2px solid $danger;
+  }
+
+  &.primary {
+    border: 2px solid $primary;
+  }
+  &.secondary {
+    border: 2px solid $secondary;
+  }
+}

@@ -1,0 +1,14 @@
+.Card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1rem;
+  min-width: 300px;
+  min-height: 100px;
+  h1,
+  h2,
+  h3 {
+    padding: 0;
+    margin: 0;
+  }
+}

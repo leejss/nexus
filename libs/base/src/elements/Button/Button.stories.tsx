@@ -12,9 +12,10 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-const Template: Story<ButtonProps> = (args) => (
-  <Button {...args}>This is button</Button>
-);
+// const Template: Story<ButtonProps> = (args) => (
+//   <Button {...args}>This is button</Button>
+// );
+
 export const Cotained = () => {
   return (
     <div>
@@ -22,7 +23,7 @@ export const Cotained = () => {
         <h1>Contained Button</h1>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Primary</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="contained" size="small">
@@ -31,7 +32,9 @@ export const Cotained = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="contained">회원가입</Button>
+              <Button variant="contained" size="medium">
+                회원가입
+              </Button>
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Large</h3>
@@ -49,7 +52,7 @@ export const Cotained = () => {
         </div>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Secondary</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="contained" size="small" color="secondary">
@@ -58,7 +61,7 @@ export const Cotained = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" color="secondary" size="medium">
                 회원가입
               </Button>
             </div>
@@ -78,7 +81,7 @@ export const Cotained = () => {
         </div>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Error</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="contained" size="small" color="error">
@@ -87,7 +90,7 @@ export const Cotained = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="contained" color="error">
+              <Button variant="contained" color="error" size="medium">
                 회원가입
               </Button>
             </div>
@@ -117,7 +120,7 @@ export const Text = () => {
         <h1>Contained Button</h1>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Primary</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="text" size="small">
@@ -126,7 +129,9 @@ export const Text = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="text">회원가입</Button>
+              <Button variant="text" size="medium">
+                회원가입
+              </Button>
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Large</h3>
@@ -144,7 +149,7 @@ export const Text = () => {
         </div>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Secondary</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="text" size="small" color="secondary">
@@ -153,7 +158,7 @@ export const Text = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="text" color="secondary">
+              <Button variant="text" color="secondary" size="medium">
                 회원가입
               </Button>
             </div>
@@ -173,7 +178,7 @@ export const Text = () => {
         </div>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Error</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="text" size="small" color="error">
@@ -182,7 +187,7 @@ export const Text = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="text" color="error">
+              <Button variant="text" color="error" size="medium">
                 회원가입
               </Button>
             </div>
@@ -212,7 +217,7 @@ export const Outlined = () => {
         <h1>Contained Button</h1>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Primary</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="outlined" size="small">
@@ -221,7 +226,9 @@ export const Outlined = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="outlined">회원가입</Button>
+              <Button variant="outlined" size="medium">
+                회원가입
+              </Button>
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Large</h3>
@@ -239,7 +246,7 @@ export const Outlined = () => {
         </div>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Secondary</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="outlined" size="small" color="secondary">
@@ -248,7 +255,7 @@ export const Outlined = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="outlined" color="secondary">
+              <Button variant="outlined" color="secondary" size="medium">
                 회원가입
               </Button>
             </div>
@@ -268,7 +275,7 @@ export const Outlined = () => {
         </div>
         <div style={{ marginBottom: '1rem' }}>
           <h2 style={{ textAlign: 'center' }}>Error</h2>
-          <Stack gutter={3}>
+          <Stack gutter={3} vertical>
             <div>
               <h3 style={{ margin: 0 }}>Small</h3>
               <Button variant="outlined" size="small" color="error">
@@ -277,7 +284,7 @@ export const Outlined = () => {
             </div>
             <div>
               <h3 style={{ margin: 0 }}>Medium</h3>
-              <Button variant="outlined" color="error">
+              <Button variant="outlined" color="error" size="medium">
                 회원가입
               </Button>
             </div>
@@ -304,7 +311,7 @@ export const Loading = () => {
   return (
     <div>
       <h1>Loading Button</h1>
-      <Stack gutter={4}>
+      <Stack gutter={4} vertical>
         <div>
           <Button loading />
         </div>

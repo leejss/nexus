@@ -9,9 +9,11 @@
   },
   "private": true,
   "dependencies": {
+    "@emotion/css": "^11.5.0",
     "@nrwl/next": "12.10.0",
     "classnames": "^2.3.1",
     "core-js": "^3.6.5",
+    "nanoid": "^3.1.30",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
