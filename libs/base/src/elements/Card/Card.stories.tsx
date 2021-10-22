@@ -11,7 +11,18 @@ export default {
 export const Default = () => {
   return (
     <div>
-      <Card title="This is title">
+      <Card
+        title="This is title"
+        headerActions={[
+          {
+            content: 'Button1',
+            onAction: () => alert('Clicked'),
+          },
+          {
+            content: 'Button2',
+          },
+        ]}
+      >
         <p>This is Card</p>
       </Card>
     </div>

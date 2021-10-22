@@ -75,28 +75,17 @@ $default-radius: 5px;
   background: none;
   &:hover {
     background: rgba(0, 0, 0, 0.02);
+    text-decoration: underline;
   }
 
   &.primary {
     color: $primary;
-    &:hover {
-      text-decoration: underline;
-      color: rgba($primary, 0.5);
-    }
   }
   &.secondary {
     color: $secondary;
-    &:hover {
-      text-decoration: underline;
-      color: rgba($secondary, 0.5);
-    }
   }
   &.error {
     color: $danger;
-    &:hover {
-      text-decoration: underline;
-      color: rgba($danger, 0.5);
-    }
   }
 }
 

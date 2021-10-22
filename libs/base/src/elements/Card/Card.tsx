@@ -4,6 +4,8 @@ import './Card.scss';
 import { Button } from '../Button';
 import { ButtonGroup } from '../../collections/ButtonGroup';
 import { Stack } from '../../layouts/Stack';
+import { Heading } from '../Heading/Heading';
+import { ButtonVariantType } from '../../types';
 
 export type CardAction = {
   content: string;
@@ -12,6 +14,7 @@ export type CardAction = {
   onAction?(): void;
   onMouseEnter?(): void;
   accessibilityLabel?: string;
+  type?: ButtonVariantType;
 };
 
 export interface CardProps {
@@ -27,11 +30,35 @@ export const Card = ({
   footerActions,
   title,
 }: CardProps) => {
+  // For Card Styling
   const classnames = classNames('Card');
+  // 카드의 제목
   const titleMarkup = title ? (
     <header>
-      <h1>{title}</h1>
+      <Heading element="h1">{title}</Heading>
     </header>
+  ) : null;
+  // 액션으로 부터 버튼을 생성한다.
+  const buttons = headerActions?.map((c, i) => {
+    const type = c.type ? c.type : 'text';
+    return (
+      <Button
+        id={c.id}
+        key={i}
+        variant={type}
+        onClick={c.onAction}
+        disabled={c.disabled}
+      >
+        {c.content}
+      </Button>
+    );
+  });
+
+  // 헤더 액션 마크업을 생성한다.
+  const headerActionsMarkup = buttons?.length ? (
+    <div>
+      <ButtonGroup buttons={buttons} />
+    </div>
   ) : null;
 
   const bodyMarkup = (
@@ -39,14 +66,7 @@ export const Card = ({
       <section>
         <Stack horizontal between>
           {titleMarkup}
-          <div>
-            <ButtonGroup
-              buttons={[
-                <Button variant="text">Button</Button>,
-                <Button variant="text">Button</Button>,
-              ]}
-            />
-          </div>
+          {headerActionsMarkup}
         </Stack>
         <div>
           <p>This is Body</p>

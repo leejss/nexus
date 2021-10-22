@@ -14,6 +14,7 @@ export interface ButtonProps {
   fullWidth?: boolean;
   disabled?: boolean;
   onClick?(): void;
+  id?: string;
 }
 
 export const Button = ({
@@ -25,6 +26,7 @@ export const Button = ({
   loading,
   onClick,
   size,
+  id,
   variant = 'contained',
 }: ButtonProps) => {
   const classnames = classNames(
@@ -45,11 +47,16 @@ export const Button = ({
   }, [onClick]);
 
   const buttonMarkup = loading ? (
-    <button className={classnames} disabled>
+    <button className={classnames} disabled id={id}>
       <Spinner width={50} height={20} />
     </button>
   ) : (
-    <button className={classnames} onClick={handleClick} disabled={disabled}>
+    <button
+      id={id}
+      className={classnames}
+      onClick={handleClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );
