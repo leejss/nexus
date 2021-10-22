@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from './Card';
 import type { CardProps } from './Card';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentMeta, Story } from '@storybook/react';
 
 export default {
   title: 'Element/Card',
@@ -12,7 +12,7 @@ export const Default = () => {
   return (
     <div>
       <Card
-        title="This is title"
+        title="카드의 제목입니다."
         headerActions={[
           {
             content: 'Button1',
@@ -23,7 +23,7 @@ export const Default = () => {
           },
         ]}
       >
-        <p>This is Card</p>
+        <p>카드의 본문입니다.</p>
       </Card>
     </div>
   );

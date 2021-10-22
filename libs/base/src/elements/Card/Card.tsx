@@ -32,12 +32,14 @@ export const Card = ({
 }: CardProps) => {
   // For Card Styling
   const classnames = classNames('Card');
+
   // 카드의 제목
   const titleMarkup = title ? (
     <header>
       <Heading element="h1">{title}</Heading>
     </header>
   ) : null;
+
   // 액션으로 부터 버튼을 생성한다.
   const buttons = headerActions?.map((c, i) => {
     const type = c.type ? c.type : 'text';
@@ -61,6 +63,8 @@ export const Card = ({
     </div>
   ) : null;
 
+  const footerMarkup = <footer></footer>;
+
   const bodyMarkup = (
     <div className={classnames}>
       <section>
@@ -68,9 +72,7 @@ export const Card = ({
           {titleMarkup}
           {headerActionsMarkup}
         </Stack>
-        <div>
-          <p>This is Body</p>
-        </div>
+        <div>{children}</div>
         <footer>
           <Stack horizontal reverse between>
             <ButtonGroup
