@@ -2,17 +2,21 @@
   // Resetting
   h1,
   h2,
-  h3 {
+  h3,
+  p {
     padding: 0;
     margin: 0;
   }
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   box-sizing: border-box;
   padding: 1rem;
-  min-width: 300px;
-  min-height: 100px;
 
   &.inline {
     display: inline-block;
+  }
+
+  .header,
+  .footer {
+    display: flex;
+    justify-content: space-between;
   }
 }

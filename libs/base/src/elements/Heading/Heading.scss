@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
 .Heading {
   padding: 0;
   margin: 0;
@@ -16,7 +14,18 @@
     font-weight: bolder;
   }
 
+  &.left {
+    text-align: left;
+  }
+
   &.center {
     text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+  &.inline {
+    display: inline-block;
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
-import { css } from '@emotion/css';
+import cx from 'classnames';
 import './Stack.scss';
+import { JustifyType } from '../../types';
+import { css } from '@emotion/css';
 
 export interface StackProps {
   gutter?: number;
@@ -9,9 +10,9 @@ export interface StackProps {
   horizontal?: boolean;
   vertical?: boolean;
   reverse?: boolean;
-  between?: boolean;
-  around?: boolean;
-  center?: boolean;
+  justify?: JustifyType;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
 }
 
 export const Stack: React.FC<StackProps> = ({
@@ -21,20 +22,35 @@ export const Stack: React.FC<StackProps> = ({
   horizontal,
   vertical,
   reverse,
-  around,
-  between,
-  center,
+  justify,
 }) => {
-  const classnames = classNames(
+  const gutterStlye = css`
+    &.horizontal {
+      > * {
+        margin-left: ${gutter}px;
+      }
+      > *:fist-child {
+        margin-left: 0px;
+      }
+    }
+
+    &.vertical {
+      > * {
+        margin-bottom: ${gutter}px;
+      }
+      > *:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  `;
+  const classnames = cx(
     'Stack',
     inline && 'inline',
     horizontal && 'horizontal',
     vertical && 'vertical',
     reverse && 'reverse',
-    around && 'around',
-    between && 'between',
-    center && 'center',
-    gutter && `gutter-${gutter}`
+    justify && justify,
+    gutter && gutterStlye
   );
   return <div className={classnames}>{children}</div>;
 };

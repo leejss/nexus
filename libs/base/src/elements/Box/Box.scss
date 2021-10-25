@@ -1,0 +1,11 @@
+.Box {
+  &.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.responsive {
+    width: 100%;
+  }
+}
