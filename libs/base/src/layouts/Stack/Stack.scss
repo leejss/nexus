@@ -3,18 +3,38 @@
   &.inline {
     display: inline-flex;
   }
-  &.reverse {
-    flex-direction: row-reverse;
+
+  &.start {
+    justify-content: flex-start;
   }
-  &.vertical {
-    flex-direction: column;
+  &.end {
+    justify-content: flex-end;
+  }
 
-    &.reverse {
-      flex-direction: column-reverse;
-    }
+  &.center {
+    justify-content: center;
+  }
 
-    &.center {
-      align-items: center;
-    }
+  &.around {
+    justify-content: space-around;
+  }
+
+  &.align-start {
+    align-items: flex-start;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.align-end {
+    align-items: flex-end;
+  }
+
+  &.evenly {
+    justify-content: space-evenly;
+  }
+  &.between {
+    justify-content: space-between;
   }
 }

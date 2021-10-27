@@ -1,19 +1,26 @@
 @import '../../styles/globals';
-
-.InputWrapper {
-  > span {
-    display: block;
+.IconInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  padding: 10px 15px;
+  .IconInput {
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background: none;
+    flex: 1;
+    padding: 5px;
   }
 }
 
 .Input {
-  border-radius: 5px;
-  padding: 5px;
   box-sizing: border-box;
-
-  &.fullWidth {
-    width: 100%;
-  }
+  padding: 5px;
+  width: 100%;
 
   &.error {
     border: 2px solid $danger;
@@ -22,7 +29,7 @@
   &.primary {
     border: 2px solid $primary;
   }
-  &.secondary {
+  &.ok {
     border: 2px solid $secondary;
   }
 }

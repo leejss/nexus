@@ -1,39 +1,84 @@
-import classNames from 'classnames';
+import cx from 'classnames';
 import React from 'react';
-import { ColorType, SizeType } from '../../types';
+import { BorderStyleType, ColorType, SizeType } from '../../types';
+import { css } from '@emotion/css';
 import './Input.scss';
+
+export type InputColorType = ColorType;
+export type InputSizeType = SizeType;
+export type InputBorderStyleType = {
+  color?: string;
+  width?: number;
+  style?: BorderStyleType;
+  radius?: string;
+};
 
 export interface InputProps {
   className?: string;
-  fullWidth?: boolean;
   placeholder?: string;
-  caption?: React.ReactNode;
   value?: string;
-  color?: ColorType;
+  color?: InputColorType;
+  border?: InputBorderStyleType;
+  background?: string;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  onChange?(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 export const Input = ({
-  caption,
-  fullWidth,
   placeholder,
   value,
   color,
+  className,
+  border = { radius: '5px', width: 2, style: 'solid' },
+  background,
+  leftIcon,
+  rightIcon,
+  onChange,
 }: InputProps) => {
-  const classnames = classNames(
+  const borderStyle = css`
+    & {
+      border-style: ${border?.style};
+      border-width: ${border?.width}px;
+      border-color: ${border?.color};
+      border-radius: ${border?.radius};
+    }
+  `;
+  const backgroundStyle = css`
+    & {
+      background-color: ${background};
+    }
+  `;
+  const classnames = cx(
     'Input',
-    fullWidth && 'fullWidth',
-    color && color
+    color && color,
+    className && className,
+    border && borderStyle,
+    background && backgroundStyle
   );
-  const defaultMarkup = (
-    <input className={classnames} placeholder={placeholder} value={value} />
-  );
-  const inputMarkup = caption ? (
-    <div className="InputWrapper">
-      <span>{caption}</span>
-      {defaultMarkup}
+
+  const iconInput = (
+    <div className="IconInputWrapper">
+      {leftIcon && leftIcon}
+      <input
+        className="IconInput"
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
+      {rightIcon && rightIcon}
     </div>
-  ) : (
-    defaultMarkup
   );
-  return inputMarkup;
+
+  if (leftIcon || rightIcon) {
+    return iconInput;
+  }
+  return (
+    <input
+      className={classnames}
+      value={value}
+      placeholder={placeholder}
+      onChange={onChange}
+    />
+  );
 };

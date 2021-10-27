@@ -1,18 +1,9 @@
 import React from 'react';
 import { css, CSSObject } from '@emotion/css';
 import cx from 'classnames';
-import { PaddingType } from '../../types';
+import { BorderStyleType, PaddingType } from '../../types';
 import './Box.scss';
 
-export type BorderStyleType =
-  | 'dashed'
-  | 'solid'
-  | 'double'
-  | 'none'
-  | 'dotted'
-  | 'groove'
-  | 'ridge'
-  | 'hidden';
 export type BorderDirectionType = 'top' | 'left' | 'right' | 'bottom';
 export type BoxBorderType = {
   color?: string;

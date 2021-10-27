@@ -1,0 +1,10 @@
+.SearchInput {
+  display: flex;
+  align-items: center;
+  background-color: #3232;
+  padding: 10px;
+  width: fit-content;
+  .IconInputWrapper {
+    margin-right: 10px;
+  }
+}

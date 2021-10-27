@@ -16,18 +16,31 @@ export const Default = () => {
         title: 'This is title',
         buttons: [
           <Button color="primary">Primary</Button>,
-          <Button color="secondary">Secondary</Button>,
+          <Button color="ok">Secondary</Button>,
         ],
       }}
       footer={{
         text: 'This is footer',
         buttons: [
           <Button color="primary">Primary</Button>,
-          <Button color="secondary">Primary</Button>,
+          <Button color="ok">Primary</Button>,
         ],
       }}
     >
       <p>This is card body</p>
+    </Card>
+  );
+};
+
+export const Basic = () => {
+  return (
+    <Card
+      inline
+      background={{
+        color: 'red',
+      }}
+    >
+      <p>This is body</p>
     </Card>
   );
 };

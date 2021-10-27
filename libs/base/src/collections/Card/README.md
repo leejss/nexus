@@ -18,4 +18,8 @@
 
 <Card onClick={handleClick} />
 <Card border={{}} background={{}} />
+
+<Card>
+  <p>This is body</p>
+</Card>
 ```

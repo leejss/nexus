@@ -1,5 +1,5 @@
 export type ButtonVariantType = 'text' | 'contained' | 'outlined';
-export type ColorType = 'primary' | 'secondary' | 'error';
+export type ColorType = 'primary' | 'ok' | 'error';
 export type HeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export type SizeType = 'small' | 'medium' | 'large';
 export type FontWeight = 'thin' | 'bold' | 'normal';
@@ -13,4 +13,19 @@ export type PaddingType =
       bottom?: number;
     };
 
-export type JustifyType = 'start' | 'end' | 'between' | 'around' | 'evenly';
+export type JustifyType =
+  | 'start'
+  | 'end'
+  | 'between'
+  | 'around'
+  | 'evenly'
+  | 'center';
+export type BorderStyleType =
+  | 'hidden'
+  | 'dotted'
+  | 'dashed'
+  | 'solid'
+  | 'double'
+  | 'groove'
+  | 'ridge'
+  | 'none';
