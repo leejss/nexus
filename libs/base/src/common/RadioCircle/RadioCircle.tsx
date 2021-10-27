@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from '@emotion/css';
 import { ReactComponent as SVGCircle } from '../../../public/svgs/circle.svg';
 import cx from 'classnames';
+import './RadioCircle.scss';
 
 export type RadioSizeType = {
   width?: number;
@@ -30,21 +31,32 @@ export interface RadioCircleProps {
   checked?: boolean;
   checkedStyle?: RadioCheckedStyleType;
   size?: RadioSizeType;
+  onClick?(event: React.MouseEvent<HTMLInputElement>): void;
 }
 
+/* Default Style  */
 const defaultCheckedStyle: RadioCheckedStyleType = {
   border: { color: '#fc5c3f' },
   innerCircle: {
     fill: '#fc5c3f',
   },
 };
+const defaultSize: RadioSizeType = {
+  width: 20,
+  height: 20,
+};
+const defaultBorder: RadioBorderType = {
+  color: 'gray',
+  width: 2,
+};
 
 export const RadioCircle = ({
   backgrond,
-  size = { width: 20, height: 20 },
-  border = { color: '#fc6c3f', width: 2 },
   checked,
+  size = defaultSize,
+  border = defaultBorder,
   checkedStyle = defaultCheckedStyle,
+  onClick,
 }: RadioCircleProps) => {
   const backgroundStyle = css`
     & {
@@ -84,10 +96,14 @@ export const RadioCircle = ({
   const classnames = cx(
     'RadioCircle',
     backgrond && backgroundStyle,
-    border && borderStyle,
-    size && sizeStyle,
+    borderStyle,
+    sizeStyle,
     checked && radioCheckedStyle
   );
 
-  return <div className={classnames}>{checked && <SVGCircle />}</div>;
+  return (
+    <div className={classnames} onClick={onClick}>
+      {checked && <SVGCircle />}
+    </div>
+  );
 };

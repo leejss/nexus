@@ -1,48 +1,50 @@
+import { nanoid } from 'nanoid';
 import React from 'react';
+import { RadioCircle } from '../../common/RadioCircle';
 import { Stack } from '../../layouts/Stack';
 import cx from 'classnames';
 import './RadioButton.scss';
-import { RadioCircle } from '../../common/RadioCircle';
 
-  export interface RadioButtonProps {
-  label?: string;
+export type RadioButtonOption = {
+  value: string;
+  label: string;
+  id?: string;
+};
+
+export interface RadioButtonProps {
+  option?: RadioButtonOption;
   name?: string;
-  value?: string;
   checked?: boolean;
-  onChange?(changeEvent: React.ChangeEvent<HTMLInputElement>): void;
+  onChange?(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 export const RadioButton = ({
   checked,
-  label,
   name,
-  value,
   onChange,
+  option,
 }: RadioButtonProps) => {
+  // 여기서 checked를 props로 받는다.
+
+  const id = nanoid();
   const classnames = cx('RadioButton');
-  const inputMarkup = (
-    <input
-      type="radio"
-      aria-label={label}
-      value={value}
-      name={name}
-      checked={checked}
-      onChange={onChange}
-    />
-  );
-  const inputLabel = label && <span>{label}</span>;
   return (
-    <label className={classnames}>
-      <Stack horizontal inline justify="between" align="center" gutter={10}>
-        <RadioCircle
-          border={{
-            color: 'gray',
-          }}
-          checked={checked}
-        />
-        {inputLabel}
-        {inputMarkup}
-      </Stack>
-    </label>
+    <div className={classnames}>
+      <label htmlFor={id}>
+        <Stack horizontal align="center">
+          <RadioCircle checked={checked} />
+          {option?.label}
+        </Stack>
+      </label>
+      <input
+        id={id}
+        type="radio"
+        value={option?.value}
+        aria-label={option?.label}
+        checked={checked}
+        name={name}
+        onChange={onChange}
+      />
+    </div>
   );
 };

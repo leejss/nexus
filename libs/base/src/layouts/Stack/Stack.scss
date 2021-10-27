@@ -1,5 +1,11 @@
 .Stack {
   display: flex;
+  &.vertical {
+    flex-direction: column;
+  }
+  &.horizontal {
+    flex-direction: row;
+  }
   &.inline {
     display: inline-flex;
   }

@@ -7,6 +7,10 @@
 <RadioButton label="" name="" value="" />
 <RadioButton label="" name="" value="" checked />
 <RadioButton label="" name="" value="" onChange={} />
+// or?
+// 밑으로 사용해보자
+<RadioButton option={} checked={} />
+
 
 const[value, setValue ] = useState("apple")
 
@@ -56,4 +60,22 @@ const [ selected, setSelected ] = React.useState("")
 
 <div>
 ```
+
 이게 체크인지 아닌지는 밖에서 판단.
+
+라벨과 인풋을 분리하는 작업.
+
+그러면 일단 id를 부여해야 한다.
+label의 htmlfor
+
+id를 외부에서 부여해줄 필요가 없이 안에서 상태로 부여
+
+각각의 input을 form으로 감싸야 하는가?
+
+라디오 버튼의 마크업 모습은? form이 들어갈 자리는?=> Grouping
+일단 input을 밖으로 빼는 작업을 해보자
+
+```ts
+<div>버튼</div>
+<label>라벨</label>
+```

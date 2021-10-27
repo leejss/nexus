@@ -8,24 +8,22 @@ export default {
 } as ComponentMeta<typeof RadioButton>;
 
 export const Basic = () => {
-  const [options, setOptions] = React.useState(['React', 'Angular', 'Vue']);
-  const [selectedOption, setSelectedOption] = React.useState('React');
-  const handleChange = (changeEvent: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(changeEvent.target.value);
-  };
   return (
     <div>
-      {options.map((option, index) => {
-        return (
-          <RadioButton
-            key={index}
-            value={option}
-            label={option}
-            checked={option === selectedOption}
-            onChange={handleChange}
-          />
-        );
-      })}
+      <RadioButton
+        option={{
+          label: '여기에 라벨이 들어갑니다.',
+          value: '여기에 값이 들어갑니다.',
+        }}
+      />
+      <br />
+      <RadioButton
+        checked={true}
+        option={{
+          label: '여기에 라벨이 들어갑니다.',
+          value: '여기에 값이 들어갑니다.',
+        }}
+      />
     </div>
   );
 };

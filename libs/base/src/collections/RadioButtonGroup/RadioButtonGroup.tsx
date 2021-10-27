@@ -1,14 +1,39 @@
 import React from 'react';
-import './RadiouButtonGroup.scss';
+import { RadioButton, RadioButtonOption } from '../../controls/RadioButton';
+import { Stack } from '../../layouts/Stack';
+import './RadioButtonGroup.scss';
 
-export type Option = {
-  text: string;
-};
-
-export interface RadioButttonGroupProps {
-  options: Option[];
+export interface RadioButtonGroupProps {
+  options: RadioButtonOption[];
+  value?: string;
+  name?: string;
+  onChange?(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
-export const RadioButtonGroup = ({ options }: RadioButttonGroupProps) => {
-  return <div></div>;
+export const RadioButtonGroup = ({
+  options,
+  onChange,
+  value,
+  name,
+}: RadioButtonGroupProps) => {
+  const optionsMarkup =
+    options &&
+    options.map((option, index) => {
+      return (
+        <RadioButton
+          name={name}
+          key={index}
+          option={option}
+          onChange={onChange}
+          checked={value === option.value}
+        />
+      );
+    });
+  return (
+    <form>
+      <Stack vertical gutter={10}>
+        {optionsMarkup}
+      </Stack>
+    </form>
+  );
 };
