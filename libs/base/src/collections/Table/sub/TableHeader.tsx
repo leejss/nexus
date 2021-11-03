@@ -1,14 +1,10 @@
 import React from 'react';
-import TableContext from './TableContext';
+import { TableHeaderContextProvider } from './TableContext';
 
-const THeader: React.FC = ({ children }) => {
-  return <thead>{children}</thead>;
-};
-
-export const TableHeader: React.FC = (props) => {
+export const TableHeader: React.FC = ({ children }) => {
   return (
-    <TableContext.Provider value="header">
-      <THeader {...props} />
-    </TableContext.Provider>
+    <TableHeaderContextProvider>
+      <thead className="TableHeader">{children}</thead>
+    </TableHeaderContextProvider>
   );
 };

@@ -1,7 +1,8 @@
 import { css } from '@emotion/css';
 import React from 'react';
-import TableContext from './TableContext';
 import cx from 'classnames';
+import { useTableContext } from './TableContext';
+import { useTableAreaContext } from './TableContext';
 
 export type TableCellBorderType = {
   left?: number;
@@ -28,8 +29,10 @@ export const TableCell: React.FC<TableCellProps> = ({
   rowSpan,
   align = 'center',
 }) => {
-  // header인가 body인가
-  const tableContext = React.useContext(TableContext);
+  // context에 접근
+  const tableContext = useTableContext();
+  const area = useTableAreaContext();
+  const bordered = tableContext?.bordered;
   const borderStyle = css`
     & {
       border-left: ${border?.left ?? 0}px;
@@ -40,8 +43,18 @@ export const TableCell: React.FC<TableCellProps> = ({
       border-style: solid;
     }
   `;
-  const classnames = cx('TableCell', border && borderStyle, align && align);
-  return (
+  const classnames = cx(
+    'TableCell',
+    border && borderStyle,
+    align && align,
+    bordered && 'bordered'
+  );
+
+  return area === 'header' ? (
+    <th className={classnames} colSpan={colSpan} rowSpan={rowSpan}>
+      {children}
+    </th>
+  ) : (
     <td className={classnames} colSpan={colSpan} rowSpan={rowSpan}>
       {children}
     </td>

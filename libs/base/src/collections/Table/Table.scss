@@ -8,7 +8,7 @@
 
 .TableCell {
   margin: 0;
-  padding: 0;
+  padding: 5px;
   // border: 1px solid black;
 
   &.left {
@@ -22,4 +22,12 @@
   &.right {
     text-align: right;
   }
+
+  &.bordered {
+    border: 2px solid black;
+  }
+}
+
+.TableHeader {
+  // border-bottom: 1px solid #000;
 }

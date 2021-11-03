@@ -11,3 +11,6 @@ export default {
 export const Basic = () => {
   return <Switch />;
 };
+export const Disabled = () => {
+  return <Switch disabled />;
+};

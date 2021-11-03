@@ -26,13 +26,7 @@ scope를 통해서 row인지 col인지 결정할 수 있다.
 
 TableContextProvider를 통해서 borderde를 전달하게 되는데
 
+테이블에서 어떻게 데이터를 렌더링할 것인가?
 
-
-
-
-
-
-
-
-
+header를 vertical로 배치하고 싶다면?
 
